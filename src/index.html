@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MakeYourRPC</title>
+  <link href="./css/style.css" rel="stylesheet">
+  <link href="./css/titlebar.css" rel="stylesheet">
+  <script src="./js/button.js"></script>
+</head>
+
+<body id="body">
+  <nav id="nav">
+    <div id="showTitle">
+    </div>
+    <div id="togglers">
+      <div id="minimize">
+        <svg x="0px" y="0px" viewBox="0 0 10 1">
+          <rect fill="#000000" width="10" height="1"></rect>
+        </svg>
+      </div>
+      <div id="maximize">
+        <svg class="fullscreen-svg" x="0px" y="0px" viewBox="0 0 10 10">
+          <path fill="#000000" d="M 0 0 L 0 10 L 10 10 L 10 0 L 0 0 z M 1 1 L 9 1 L 9 9 L 1 9 L 1 1 z " />
+        </svg>
+      </div>
+      <div id="close">
+        <svg x="0px" y="0px" viewBox="0 0 10 10">
+          <polygon fill="#000000" points="10,1 9,0 5,4 1,0 0,1 4,5 0,9 1,10 5,6 9,10 10,9 6,5"></polygon>
+        </svg>
+      </div>
+    </div>
+  </nav>
+  <h1 id="title">MakeYourRPC</h1>
+  <div class="center low">
+    <h2>Details</h2>
+    <h4 contenteditable="true" id="details">placeholder</h4>
+    <h2>State</h2>
+    <h4 contenteditable="true" id="state">placeholder</h4>
+    <div class="table">
+      <div class="item">
+        <h2 id="fou">Small Image</h2>
+        <h4 contenteditable="true" id="stext">placeholder</h4>
+      </div>
+      <div class="item">
+        <h2>Large Image</h2>
+        <h4 contenteditable="true" id="ltext">placeholder</h4>
+      </div>
+    </div>
+    <div class="table">
+      <div class="item">
+        <h2 id="fou">Small Text</h2>
+        <h4 contenteditable="true" id="stext">placeholder</h4>
+      </div>
+      <div class="item">
+        <h2>Large Text</h2>
+        <h4 contenteditable="true" id="ltext">placeholder</h4>
+      </div>
+      <h3 class="button" id="btn-run" onclick="run()">
+        <a>Run</a>
+      </h3>
+      <h3 class="button" id="btn-save" onclick="save()">
+        <a>Save</a>
+      </h3>
+    </div>
+  </div>
+</body>
+
+<script src=" ./js/aligner.js"></script>
+<script src="./js/menuHandler.js"></script>
+
+</html>
