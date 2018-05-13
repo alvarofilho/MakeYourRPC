@@ -1,19 +1,21 @@
 const electron = require('electron');
 const path = require('path');
 const url = require('url');
+const DiscordRPC = require('discord-rpc');
 
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const config = require('./src/config.json');
 
 let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1000,
+    width: 800,
     minWidth: 400,
     height: 600,
     minHeight: 300,
-    icon: __dirname + '/src/img/icon.png',
+    icon: __dirname + '/src/img/256x256.png',
     frame: false,
     title: 'MakeYourRPC'
   });
@@ -27,7 +29,7 @@ function createWindow() {
   );
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   mainWindow.on('closed', function() {
     mainWindow = null;
@@ -61,3 +63,32 @@ app.on('activate', function() {
     createWindow();
   }
 });
+
+let clientId = config.clientId;
+
+DiscordRPC.register(clientId);
+
+const rpc = new DiscordRPC.Client({ transport: 'ipc' });
+
+async function setActivity() {
+  if (!rpc || !mainWindow) return;
+
+  rpc.setActivity({
+    details: config.state.details,
+    state: config.state.state,
+    largeImageKey: config.images.largeImage,
+    largeImageText: config.images.largeImageTooltip,
+    smallImageKey: config.images.smallImage,
+    smallImageText: config.images.smallImageTooltip,
+    instance: false
+  });
+}
+
+rpc.on('ready', () => {
+  setActivity();
+  setInterval(() => {
+    setActivity();
+  }, 1000);
+});
+
+rpc.login(clientId).catch(console.error);

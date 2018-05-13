@@ -1,13 +1,13 @@
 {
-  "clientID": "123456789012345678",
+  "clientId": "445351781774393345",
   "state": {
-    "state": "",
-    "details": ""
+    "state": "Teste",
+    "details": "Teste 2"
   },
   "images": {
-    "largeImage": "",
-    "smallImage": "",
-    "largeImageTooltip": "",
-    "smallImageTooltip": ""
+    "largeImage": "teste1",
+    "smallImage": "teste",
+    "largeImageTooltip": "BeeGay",
+    "smallImageTooltip": "BeeGay2"
   }
 }

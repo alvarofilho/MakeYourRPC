@@ -1,16 +1,18 @@
 function save() {
-  alert('save');
+  let btn = document.getElementById('btn-save');
 }
-function run() {
-  let x = document.getElementById('btn-run');
 
-  if (x.hasAttribute('date-run')) {
-    x.setAttribute('class', 'button');
-    x.removeAttribute('date-run');
-    x.innerHTML = 'Run';
+function run() {
+  let btn = document.getElementById('btn-run');
+
+  if (btn.hasAttribute('date-run')) {
+    btn.setAttribute('class', 'button');
+    btn.removeAttribute('date-run');
+    btn.innerHTML = 'Ligar';
+    rpc.clearActivity();
   } else {
-    x.setAttribute('class', 'button red');
-    x.setAttribute('date-run', 'run');
-    x.innerHTML = 'Stop';
+    btn.setAttribute('class', 'button red');
+    btn.setAttribute('date-run', 'run');
+    btn.innerHTML = 'Desligar';
   }
 }

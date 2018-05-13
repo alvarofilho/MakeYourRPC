@@ -1,7 +1,7 @@
 {
   "name": "MakeYourRPC",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.5",
+  "description": "Create your RPC in an easy and practical way.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -25,8 +25,7 @@
     "appId": "com.makeyourrpc",
     "win": {
       "target": "nsis",
-      "icon": "/src/img/icon.ico"
+      "icon": "/src/img/512x512.png"
     }
-    
   }
 }
