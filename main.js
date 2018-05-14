@@ -3,17 +3,59 @@ const path = require('path');
 const url = require('url');
 const DiscordRPC = require('discord-rpc');
 
+const express = require('express');
+const server = express();
+
+const config = require('./src/config.json');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
-const config = require('./src/config.json');
 
 let mainWindow;
 
+let clientId = config.clientId;
+
+DiscordRPC.register(clientId);
+
+const rpc = new DiscordRPC.Client({ transport: 'ipc' });
+
+async function setActivity() {
+  if (!rpc || !mainWindow) return;
+
+  let details = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("details")[text];'
+  );
+  let state = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("state")[text];'
+  );
+  let largeImage = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("limage")[text];'
+  );
+  let largeImageTooltip = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("ltext")[text];'
+  );
+  let smallImage = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("simage")[text];'
+  );
+  let smallImageTooltip = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("stext")[text];'
+  );
+
+  rpc.setActivity({
+    details: details,
+    state: state,
+    largeImageKey: largeImage,
+    largeImageText: largeImageTooltip,
+    smallImageKey: smallImage,
+    smallImageText: smallImageTooltip,
+    instance: false
+  });
+}
+
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 800,
+    width: 1000,
     minWidth: 400,
-    height: 600,
+    height: 700,
     minHeight: 300,
     icon: __dirname + '/src/img/256x256.png',
     frame: false,
@@ -29,7 +71,7 @@ function createWindow() {
   );
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   mainWindow.on('closed', function() {
     mainWindow = null;
@@ -64,26 +106,6 @@ app.on('activate', function() {
   }
 });
 
-let clientId = config.clientId;
-
-DiscordRPC.register(clientId);
-
-const rpc = new DiscordRPC.Client({ transport: 'ipc' });
-
-async function setActivity() {
-  if (!rpc || !mainWindow) return;
-
-  rpc.setActivity({
-    details: config.state.details,
-    state: config.state.state,
-    largeImageKey: config.images.largeImage,
-    largeImageText: config.images.largeImageTooltip,
-    smallImageKey: config.images.smallImage,
-    smallImageText: config.images.smallImageTooltip,
-    instance: false
-  });
-}
-
 rpc.on('ready', () => {
   setActivity();
   setInterval(() => {
@@ -91,4 +113,13 @@ rpc.on('ready', () => {
   }, 1000);
 });
 
-rpc.login(clientId).catch(console.error);
+server.post('/stoprpc', (req, res) => {
+  rpc.destroy();
+  rpc.clearActivity();
+});
+
+server.post('/startrpc', (req, res) => {
+  rpc.login(clientId).catch(console.error);
+});
+
+server.listen(3000, () => console.log(`Web server started! (3000)`));
