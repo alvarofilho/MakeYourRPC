@@ -1,7 +1,7 @@
 const electron = require('electron');
 const path = require('path');
 const url = require('url');
-const DiscordRPC = require('discord-rpc');
+const DiscordRPC = require('./RPC');
 
 const express = require('express');
 const server = express();
@@ -114,7 +114,6 @@ rpc.on('ready', () => {
 });
 
 server.post('/stoprpc', (req, res) => {
-  rpc.destroy();
   rpc.clearActivity();
 });
 
@@ -122,4 +121,4 @@ server.post('/startrpc', (req, res) => {
   rpc.login(clientId).catch(console.error);
 });
 
-server.listen(3000, () => console.log(`Web server started! (3000)`));
+server.listen(3000, () => console.log('Web server started! (3000)'));
