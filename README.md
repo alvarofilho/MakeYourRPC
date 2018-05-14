@@ -1,6 +1,6 @@
 ---
 
-[![Discord](https://img.shields.io/discord/268970339948691456.svg?style=flat-square&colorB=7289DA)](https://discord.gg/heg6VB2)
+[![Discord](https://img.shields.io/discord/427525850360053780.svg?style=flat-square)](https://discord.gg/heg6VB2)
 
 # MakeYourRPC
 
