@@ -1,7 +1,8 @@
 {
   "name": "MakeYourRPC",
-  "version": "1.0.5",
-  "description": "Create your RPC in an easy and practical way.",
+  "version": "1.1.0",
+  "description":
+    "Create your Rich Presence on Discord in an easy and practical way.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -18,7 +19,6 @@
   },
   "dependencies": {
     "discord-rpc": "./RPC",
-    "express": "^4.16.3",
     "jquery": "^3.3.1",
     "jsdom": "^11.10.0"
   },

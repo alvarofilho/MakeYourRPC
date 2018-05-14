@@ -3,8 +3,7 @@ const path = require('path');
 const url = require('url');
 const DiscordRPC = require('./RPC');
 
-const express = require('express');
-const server = express();
+const { ipcMain } = require('electron');
 
 const config = require('./src/config.json');
 const app = electron.app;
@@ -71,7 +70,7 @@ function createWindow() {
   );
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
 
   mainWindow.on('closed', function() {
     mainWindow = null;
@@ -110,15 +109,21 @@ rpc.on('ready', () => {
   setActivity();
   setInterval(() => {
     setActivity();
-  }, 1000);
+  }, 15e3);
 });
 
-server.post('/stoprpc', (req, res) => {
-  rpc.clearActivity();
+async function destroyRPC() {
+  if (!rpc) return;
+  await rpc.destroy();
+  rpc = null;
+}
+
+function initRPC(clientID) {}
+
+ipcMain.on('stoprpc', () => {
+  destroyRPC();
 });
 
-server.post('/startrpc', (req, res) => {
+ipcMain.on('start', () => {
   rpc.login(clientId).catch(console.error);
 });
-
-server.listen(3000, () => console.log('Web server started! (3000)'));

@@ -4,7 +4,7 @@
 
 # MakeYourRPC
 
-Create your RPC in an easy and practical way.
+Create your Rich Presence on Discord in an easy and practical way.
 
 # Contributors
 
