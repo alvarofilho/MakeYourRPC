@@ -10,5 +10,5 @@ Create your Rich Presence on Discord in an easy and practical way.
 
 * [Álvaro Filho#9328](http://github.com/SrSheep)
 * [GJMoehra#3411](https://github.com/)
-* [Rubens Camara Machado#5986](https://github.com/)
+* [Rubens Camara Machado#5986](https://github.com/RubensCamaraMachado)
 * [A Liga Dos Programadores](https://github.com/Liga-dos-Programadores)

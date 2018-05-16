@@ -15,7 +15,7 @@ let clientId = config.clientId;
 
 DiscordRPC.register(clientId);
 
-const rpc = new DiscordRPC.Client({ transport: 'ipc' });
+let rpc = new DiscordRPC.Client({ transport: 'ipc' });
 
 async function setActivity() {
   if (!rpc || !mainWindow) return;
@@ -70,7 +70,7 @@ function createWindow() {
   );
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   mainWindow.on('closed', function() {
     mainWindow = null;
@@ -105,25 +105,30 @@ app.on('activate', function() {
   }
 });
 
-rpc.on('ready', () => {
-  setActivity();
-  setInterval(() => {
+function initRPC(clientId) {
+  rpc = new DiscordRPC.Client({ transport: 'ipc' });
+  rpc.once('ready', () => {
     setActivity();
-  }, 15e3);
-});
+    setTimeout(() => {
+      setActivity();
+    }, 1000);
+  });
+  rpc.login(clientId).catch(console.error);
+}
 
-async function destroyRPC() {
+function destroyRPC() {
   if (!rpc) return;
-  await rpc.destroy();
+  rpc.clearActivity();
+  rpc.destroy();
   rpc = null;
 }
 
-function initRPC(clientID) {}
-
 ipcMain.on('stoprpc', () => {
   destroyRPC();
+  console.log('stop');
 });
 
-ipcMain.on('start', () => {
-  rpc.login(clientId).catch(console.error);
+ipcMain.on('startrpc', () => {
+  initRPC(clientId);
+  console.log('start');
 });
