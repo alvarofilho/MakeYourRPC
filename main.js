@@ -2,20 +2,17 @@ const electron = require('electron');
 const path = require('path');
 const url = require('url');
 const DiscordRPC = require('./RPC');
-
 const { ipcMain } = require('electron');
+const settings = require('electron-settings');
 
-const config = require('./src/config.json');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
 let mainWindow;
-
-let clientId = config.clientId;
+let rpc = new DiscordRPC.Client({ transport: 'ipc' });
+let clientId;
 
 DiscordRPC.register(clientId);
-
-let rpc = new DiscordRPC.Client({ transport: 'ipc' });
 
 async function setActivity() {
   if (!rpc || !mainWindow) return;
@@ -72,7 +69,7 @@ function createWindow() {
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
 
-  mainWindow.on('closed', function() {
+  mainWindow.on('closed', () => {
     mainWindow = null;
   });
 }
@@ -91,18 +88,84 @@ app.on('ready', () => {
   mainWindow.on('unmaximize', () => {
     mainWindow.webContents.send('unmaximize');
   });
+
+  if (!settings.has('clientId')) {
+    settings.set('clientId', '445351781774393345');
+  }
+
+  if (!settings.has('state')) {
+    settings.set('state', {
+      state: 'Estou usado o MakeYourRPC',
+      details: 'https://github.com/SrSheep/MakeYourRPC'
+    });
+  }
+
+  if (!settings.has('images')) {
+    settings.set('images', {
+      largeImage: 'fundo',
+      smallImage: 'lua',
+      largeImageTooltip: 'MakeYourRPC',
+      smallImageTooltip: 'MakeYourRPC'
+    });
+  }
+
+  clientId = settings.get('clientId');
 });
 
-app.on('window-all-closed', function() {
+app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
-app.on('activate', function() {
+app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
   }
+});
+
+ipcMain.on('stoprpc', () => {
+  destroyRPC();
+  console.log('stop');
+});
+
+ipcMain.on('startrpc', () => {
+  initRPC(clientId);
+  console.log('start');
+});
+
+ipcMain.on('saverpc', async () => {
+  settings.clearPath();
+  let details = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("details")[text];'
+  );
+  let state = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("state")[text];'
+  );
+  let largeImage = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("limage")[text];'
+  );
+  let largeImageTooltip = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("ltext")[text];'
+  );
+  let smallImage = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("simage")[text];'
+  );
+  let smallImageTooltip = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("stext")[text];'
+  );
+  settings.set('clientId', clientId);
+  settings.set('state', {
+    state: state,
+    details: details
+  });
+  settings.set('images', {
+    largeImage: largeImage,
+    smallImage: smallImage,
+    largeImageTooltip: largeImageTooltip,
+    smallImageTooltip: smallImageTooltip
+  });
+  console.log('save');
 });
 
 function initRPC(clientId) {
@@ -122,13 +185,3 @@ function destroyRPC() {
   rpc.destroy();
   rpc = null;
 }
-
-ipcMain.on('stoprpc', () => {
-  destroyRPC();
-  console.log('stop');
-});
-
-ipcMain.on('startrpc', () => {
-  initRPC(clientId);
-  console.log('start');
-});

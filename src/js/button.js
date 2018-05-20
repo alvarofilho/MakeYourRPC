@@ -2,6 +2,7 @@ const { ipcRenderer } = require('electron');
 
 function save() {
   let btn = document.getElementById('btn-save');
+  ipcRenderer.send('saverpc', 'save');
 }
 
 function run() {

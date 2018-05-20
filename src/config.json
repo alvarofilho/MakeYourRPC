@@ -1,13 +1,13 @@
 {
   "clientId": "445351781774393345",
   "state": {
-    "state": "Teste",
-    "details": "Teste 2"
+    "state": "Estou usado o MakeYourRPC",
+    "details": "https://github.com/SrSheep/MakeYourRPC"
   },
   "images": {
-    "largeImage": "teste1",
-    "smallImage": "teste",
-    "largeImageTooltip": "BeeGay",
-    "smallImageTooltip": "BeeGay2"
+    "largeImage": "fundo",
+    "smallImage": "lua",
+    "largeImageTooltip": "MakeYourRPC",
+    "smallImageTooltip": "MakeYourRPC"
   }
 }
