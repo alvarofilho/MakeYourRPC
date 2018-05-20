@@ -9,25 +9,28 @@
     "pack": "electron-builder --dir",
     "dist": "build"
   },
-  "repository": "",
+  "repository": "git@github.com:SrSheep/MakeYourRPC.git",
   "keywords": ["Electron", "Discord", "RPC"],
   "author": "Álvaro Filho",
   "license": "MIT",
-  "devDependencies": {
-    "electron": "^2.0.0",
-    "electron-builder": "^20.13.3"
-  },
   "dependencies": {
     "discord-rpc": "./RPC",
     "electron-settings": "^3.2.0",
     "jquery": "^3.3.1",
     "jsdom": "^11.10.0"
   },
+  "devDependencies": {
+    "electron": "^2.0.0",
+    "electron-builder": "^20.13.3"
+  },
   "build": {
     "appId": "com.makeyourrpc",
     "win": {
       "target": "nsis",
       "icon": "/src/img/512x512.png"
+    },
+    "linux": {
+      "target": ["AppImage", "deb", "snap", "pacman", "rpm"]
     }
   }
 }
