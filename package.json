@@ -26,7 +26,12 @@
   "build": {
     "appId": "com.makeyourrpc",
     "win": {
-      "target": "nsis",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64", "ia32"]
+        }
+      ],
       "icon": "/src/img/512x512.png"
     },
     "linux": {
