@@ -12,8 +12,6 @@ let mainWindow;
 let rpc = new DiscordRPC.Client({ transport: 'ipc' });
 let clientId;
 
-DiscordRPC.register(clientId);
-
 async function setActivity() {
   if (!rpc || !mainWindow) return;
 
@@ -136,6 +134,9 @@ ipcMain.on('startrpc', () => {
 
 ipcMain.on('saverpc', async () => {
   settings.clearPath();
+  let clientId = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("clientid")[text];'
+  );
   let details = await mainWindow.webContents.executeJavaScript(
     'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("details")[text];'
   );
