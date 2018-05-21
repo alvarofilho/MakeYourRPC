@@ -1,8 +1,7 @@
 {
   "name": "MakeYourRPC",
   "version": "1.1.1",
-  "description":
-    "Create your Rich Presence on Discord in an easy and practical way.",
+  "description": "Create your Rich Presence on Discord in an easy and practical way.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -10,7 +9,11 @@
     "dist": "build"
   },
   "repository": "git@github.com:SrSheep/MakeYourRPC.git",
-  "keywords": ["Electron", "Discord", "RPC"],
+  "keywords": [
+    "Electron",
+    "Discord",
+    "RPC"
+  ],
   "author": "Álvaro Filho",
   "license": "MIT",
   "dependencies": {
@@ -29,13 +32,22 @@
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64", "ia32"]
+          "arch": [
+            "x64",
+            "ia32"
+          ]
         }
       ],
       "icon": "/src/img/512x512.png"
     },
     "linux": {
-      "target": ["AppImage", "deb", "snap", "pacman", "rpm"]
+      "target": [
+        "AppImage",
+        "deb",
+        "snap",
+        "pacman",
+        "rpm"
+      ]
     }
   }
 }

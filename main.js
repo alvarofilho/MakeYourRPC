@@ -1,16 +1,13 @@
-const electron = require('electron');
+const { app, ipcMain, Tray, Menu, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
 const DiscordRPC = require('./RPC');
-const { ipcMain } = require('electron');
 const settings = require('electron-settings');
 
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
-
-let mainWindow;
-let rpc = new DiscordRPC.Client({ transport: 'ipc' });
+let rpc;
 let clientId;
+let tray;
+let mainWindow;
 
 async function setActivity() {
   if (!rpc || !mainWindow) return;
@@ -53,6 +50,8 @@ function createWindow() {
     minHeight: 300,
     icon: __dirname + '/src/img/256x256.png',
     frame: false,
+    transparent: true,
+    fullscreenable: false,
     title: 'MakeYourRPC'
   });
 
@@ -72,7 +71,33 @@ function createWindow() {
   });
 }
 
+function createTray() {
+  tray = new Tray(path.join(__dirname, './src/img/256x256.png'));
+  const trayMenu = Menu.buildFromTemplate([
+    {
+      label: 'MakeYourRPC',
+      enabled: false
+    },
+    {
+      label: 'Abrir',
+      click: () => {
+        mainWindow.show();
+      }
+    },
+    {
+      label: 'Fechar',
+      click: () => {
+        app.quit();
+      }
+    }
+  ]);
+
+  tray.setToolTip('MakeYourRPC');
+  tray.setContextMenu(trayMenu);
+}
+
 app.on('ready', () => {
+  createTray();
   createWindow();
   mainWindow.once('ready-to-show', () => {
     win.show();
