@@ -16,5 +16,4 @@ $('#maximize').click(() => {
   } else {
     win.maximize();
   }
-  console.log(win.isMaximized());
 });

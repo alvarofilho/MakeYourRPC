@@ -4,66 +4,56 @@
 <head>
   <meta charset="UTF-8">
   <title>MakeYourRPC</title>
-  <link href="./css/style.css" rel="stylesheet">
+  <link href="./css/reset.css" rel="stylesheet">
+  <link href="./css/base.css" rel="stylesheet">
   <link href="./css/titlebar.css" rel="stylesheet">
+  <link href="./css/footer.css" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 </head>
 
 <body id="body">
   <nav id="nav">
-    <div id="showTitle">
-    </div>
     <div id="togglers">
       <div id="minimize">
         <svg x="0px" y="0px" viewBox="0 0 10 1">
-          <rect fill="#000000" width="10" height="1"></rect>
+          <rect fill="#FFFFFF" width="10" height="1"></rect>
         </svg>
       </div>
       <div id="maximize">
         <svg class="fullscreen-svg" x="0px" y="0px" viewBox="0 0 10 10">
-          <path fill="#000000" d="M 0 0 L 0 10 L 10 10 L 10 0 L 0 0 z M 1 1 L 9 1 L 9 9 L 1 9 L 1 1 z " />
+          <path fill="#FFFFFF" d="M 0 0 L 0 10 L 10 10 L 10 0 L 0 0 z M 1 1 L 9 1 L 9 9 L 1 9 L 1 1 z " />
         </svg>
       </div>
       <div id="close">
         <svg x="0px" y="0px" viewBox="0 0 10 10">
-          <polygon fill="#000000" points="10,1 9,0 5,4 1,0 0,1 4,5 0,9 1,10 5,6 9,10 10,9 6,5"></polygon>
+          <polygon fill="#FFFFFF" points="10,1 9,0 5,4 1,0 0,1 4,5 0,9 1,10 5,6 9,10 10,9 6,5"></polygon>
         </svg>
       </div>
     </div>
   </nav>
-  <h1 id="title">MakeYourRPC</h1>
+  <h1 class="title">MakeYourRPC</h1>
   <div class="center low">
-    <div>
-      <h2>ClientId</h2>
+    <div class="fields">
+      <h2>Client ID:</h2>
       <h4 contenteditable="true" id="clientid">placeholder</h4>
-      <h2>Details</h2>
+      <h2>Details:</h2>
       <h4 contenteditable="true" id="details">placeholder</h4>
-      <h2>State</h2>
+      <h2>State:</h2>
       <h4 contenteditable="true" id="state">placeholder</h4>
-    </div>
-    <div class="table">
-      <div class="item">
-        <h2 id="fou">Small Image</h2>
-        <h4 contenteditable="true" id="simage">placeholder</h4>
-      </div>
-      <div class="item">
-        <h2>Large Image</h2>
-        <h4 contenteditable="true" id="limage">placeholder</h4>
-      </div>
-    </div>
-    <div class="table">
-      <div class="item">
-        <h2 id="fou">Small Text</h2>
-        <h4 contenteditable="true" id="stext">placeholder</h4>
-      </div>
-      <div class="item">
-        <h2>Large Text</h2>
-        <h4 contenteditable="true" id="ltext">placeholder</h4>
-      </div>
+      <h2>Small Image:</h2>
+      <h4 contenteditable="true" id="simage">placeholder</h4>
+      <h2>Large Image:</h2>
+      <h4 contenteditable="true" id="limage">placeholder</h4>
+      <h2>Small Text:</h2>
+      <h4 contenteditable="true" id="stext">placeholder</h4>
+      <h2>Large Text:</h2>
+      <h4 contenteditable="true" id="ltext">placeholder</h4>
       <h3 class="button" id="btn-run" onclick="run()">
+        <i class="fas fa-play"></i>
         <a>Ligar</a>
       </h3>
       <h3 class="button" id="btn-save" onclick="save()">
+        <i class="far fa-edit"></i>
         <a>Update</a>
       </h3>
     </div>
@@ -75,7 +65,7 @@
       <br>
       <div class="developer">
         <i class="fas fa-terminal"></i>
-        <a href="">Álvaro Filho</a>
+        <a>Álvaro Filho</a>
       </div>
     </div>
   </div>

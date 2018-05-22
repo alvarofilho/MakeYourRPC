@@ -1,95 +1,11 @@
-body,
-html {
-  margin: 0px;
-  height: 100%;
-  font-family: sans-serif;
-  background-color: #2c2f33;
-}
-
-a {
-  text-align: center;
-  text-decoration: underline;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #ffffff;
-}
-
-#title {
-  display: grid;
-  font-size: 350%;
-  margin: auto;
-  text-align: center;
-  user-select: none;
-  color: #ffffff;
-}
-
-.center,
-h2 {
-  text-align: center;
-}
-
-.low {
-  margin-top: -10px;
-}
-
-.table > .item {
-  width: 50%;
-  float: left;
-}
-
-.button {
-  background-color: #7289da;
-  border: none;
-  color: #ffffff;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 6px;
-  margin-left: 3%;
-  margin-right: 2%;
-  text-decoration: none;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.red {
-  background-color: rgba(189, 12, 47, 0.863);
-}
-
-.button,
-a {
-  text-decoration: none;
-}
-
-[contenteditable='true']:active,
-[contenteditable='true']:focus {
-  border: none;
-  outline: none;
-}
-
-[contenteditable='true'] {
-  font-size: 0.75em;
-  color: #ffffff;
-  font-family: courier, sans-serif;
-  line-height: 1.5;
-  position: relative;
-}
-
 .footer-container {
-  padding: 30px 5px;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  padding: 35px 5px;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 300;
+  align-self: flex-end;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .footer-container .texto-centro {
@@ -131,11 +47,10 @@ a {
 }
 
 .informacoes-container .details .nome {
-  color: #fff;
+  color: #ffffff;
   padding: 5px;
   text-align: center;
   font-size: 19px;
-  font-family: 'Lato', sans-serif;
   font-weight: 300;
   background-color: #161616;
   border-top-left-radius: 5px;
@@ -143,7 +58,7 @@ a {
 }
 
 .informacoes-container .details .conteudo {
-  color: #fff;
+  color: #ffffff;
   padding: 10px;
   text-align: center;
   font-size: 17px;
@@ -172,11 +87,10 @@ a {
 }
 
 .mecformations-container .informations .nome {
-  color: #fff;
+  color: #ffffff;
   padding: 5px;
   text-align: center;
   font-size: 19px;
-  font-family: 'Lato', sans-serif;
   font-weight: 300;
   background-color: #161616;
   border-top-left-radius: 5px;
@@ -191,10 +105,9 @@ a {
 }
 
 .mecformations-container .informations .conteudo .texto {
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   font-size: 18px;
-  font-family: 'Arial', sans-serif;
   font-weight: 400;
   cursor: not-allowed;
 }
@@ -229,14 +142,4 @@ a {
 .mecformations-container .informations:hover {
   box-shadow: 0px 7px 28px -16px rgba(20, 20, 20, 1);
   transition: all 0.6s;
-}
-
-.botoes-container {
-  width: 90%;
-  height: auto;
-  border-radius: 10px;
-  display: inline-block;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
