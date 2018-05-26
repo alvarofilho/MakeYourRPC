@@ -1,5 +1,5 @@
 .footer-container {
-  padding: 35px 5px;
+  padding: 40px 5px;
   color: #ffffff;
   font-size: 16px;
   font-weight: 300;
@@ -8,20 +8,20 @@
   align-items: flex-end;
 }
 
-.footer-container .texto-centro {
+.footer-container .text-center {
   text-align: center;
 }
 
-.footer-container .texto-centro a {
+.footer-container .text-center a {
   color: #7289da;
 }
 
-.footer-container .texto-centro .developer {
+.footer-container .text-center .developer {
   font-size: 12px;
   color: #ededed;
 }
 
-.footer-container .texto-centro .developer a {
+.footer-container .text-center .developer a {
   color: #ededed;
 }
 

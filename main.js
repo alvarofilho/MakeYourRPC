@@ -1,4 +1,11 @@
-const { app, ipcMain, Tray, Menu, BrowserWindow } = require('electron');
+const {
+  app,
+  ipcMain,
+  Tray,
+  Menu,
+  BrowserWindow,
+  Notification
+} = require('electron');
 const path = require('path');
 const url = require('url');
 const DiscordRPC = require('./RPC');
@@ -102,6 +109,7 @@ ipcMain.on('saverpc', async () => {
     largeImageTooltip: largeImageTooltip,
     smallImageTooltip: smallImageTooltip
   });
+  notifyMe();
 });
 
 function initRPC(id) {
@@ -157,7 +165,7 @@ async function setActivity() {
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1000,
+    width: 600,
     minWidth: 400,
     height: 700,
     minHeight: 300,
@@ -202,6 +210,20 @@ function createTray() {
     }
   ]);
 
+  tray.on('double-click', () => {
+    mainWindow.show();
+  });
+
   tray.setToolTip('MakeYourRPC');
   tray.setContextMenu(trayMenu);
+}
+
+function notifyMe() {
+  let myNotification = new Notification('Título', {
+    body: 'Lorem Ipsum Dolor Sit Amet'
+  });
+
+  myNotification.onclick = () => {
+    console.log('Notificação clicada');
+  };
 }

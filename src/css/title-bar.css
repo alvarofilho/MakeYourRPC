@@ -5,7 +5,7 @@ nav {
   padding: 0;
 }
 
-#togglers {
+.togglers {
   display: block;
   float: right;
   width: 150px;
@@ -15,9 +15,9 @@ nav {
   font-weight: bold;
 }
 
-#togglers > #minimize,
-#togglers > #maximize,
-#togglers > #close {
+.togglers > .minimize,
+.togglers > .maximize,
+.togglers > .close {
   width: 33.32%;
   height: 100%;
   float: left;
@@ -26,7 +26,7 @@ nav {
   transition: all ease-in-out 0.2s;
 }
 
-#togglers > #maximize > span {
+.togglers > .maximize > span {
   width: 100%;
   height: 100%;
   position: relative;
@@ -34,8 +34,8 @@ nav {
   transition: all ease-in-out 0.2s;
 }
 
-#togglers > #maximize > span::before,
-#togglers > #maximize > span::after {
+.togglers > .maximize > span::before,
+.togglers > .maximize > span::after {
   content: '';
   width: 15%;
   height: 21%;
@@ -45,27 +45,27 @@ nav {
   transition: all ease-in-out 0.2s;
 }
 
-#togglers > #maximize > span::before {
+.togglers > .maximize > span::before {
   top: 30%;
   left: 35%;
   z-index: 2;
 }
 
-#togglers > #maximize > span::after {
+.togglers > .maximize > span::after {
   top: 25%;
   left: 45%;
 }
 
-#minimize svg,
-#maximize svg.maximize-svg,
-#maximize svg.fullscreen-svg,
-#close svg {
+.minimize svg,
+.maximize svg.maximize-svg,
+.maximize svg.fullscreen-svg,
+.close svg {
   width: 10px;
   height: 10px;
   shape-rendering: crispEdges;
 }
 
-#close svg polygon {
+.close svg polygon {
   -webkit-transition: fill 0.2s;
   -moz-transition: fill 0.2s;
   -ms-transition: fill 0.2s;
@@ -73,20 +73,20 @@ nav {
   transition: fill 0.2s;
 }
 
-#minimize:hover,
-#maximize:hover {
+.minimize:hover,
+.maximize:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-#light #minimize:hover,
-#light #maximize:hover {
+.light .minimize:hover,
+.light .maximize:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-#close:hover {
+.close:hover {
   background-color: rgba(232, 17, 35, 0.9);
 }
 
-#close:hover svg polygon {
+.close:hover svg polygon {
   fill: rgba(255, 255, 255, 1);
 }

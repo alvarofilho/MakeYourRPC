@@ -3,7 +3,7 @@ const { remote } = require('electron');
 var win = remote.getCurrentWindow();
 
 $('#minimize').click(() => {
-  win.minimize();
+  win.hide();
 });
 
 $('#close').click(() => {
