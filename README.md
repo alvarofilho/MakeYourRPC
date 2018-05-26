@@ -37,17 +37,23 @@
 
 > Primeiramente você deve criar uma nova aplicação em sua conta do Discord e habilitar a Rich Presence para ela, depois customizá-la e por último ativá-la. Como fazer isso?
 
-* Conecte-se em sua conta do Discord e acesse a área de desenvolvimento e abra a parte minhas aplicações.  [Clique aqui para ser redirecionado para lá.](https://discordapp.com/developers/applications/me)![](https://cdn.discordapp.com/attachments/426888411488714762/449790089178906634/unknown.png)
+Conecte-se em sua conta do Discord e acesse a área de desenvolvimento e abra a parte minhas aplicações.[Clique aqui para ser redirecionado para lá.](https://discordapp.com/developers/applications/me)
+![](https://cdn.discordapp.com/attachments/426888411488714762/449790089178906634/unknown.png)
 
-* Crie uma nova aplicação, nomeie-a e ative a opção Rich Presence nessa aplicação. ![](https://cdn.discordapp.com/attachments/426888411488714762/449790123014619154/unknown.png)
+Crie uma nova aplicação, nomeie-a e ative a opção Rich Presence nessa aplicação.
+![](https://cdn.discordapp.com/attachments/426888411488714762/449790123014619154/unknown.png)
 
-* Adicione recursos a sua aplicação, tais como as imagens pequena e grande que serão mostradas no visor de sua aplicação enquanto ela estiver em uso.![](https://cdn.discordapp.com/attachments/426888411488714762/449790151061929994/unknown.png)
+Adicione recursos a sua aplicação, tais como as imagens pequena e grande que serão mostradas no visor de sua aplicação enquanto ela estiver em uso.
+![](https://cdn.discordapp.com/attachments/426888411488714762/449790151061929994/unknown.png)
 
-* Faça o download da última versão do aplicativo [MakeYourRPC](https://github.com/SrSheep/MakeYourRPC/releases), execute e instale-o e preencha os campos conforme sua aplicação e como quiser, por exemplo, em ID do Cliente você coloca o número que aparece no painel da sua aplicação, já no texto da imagem grande e pequena, status, detalhes, você coloca o que você quer. [Clique aqui para baixá-lo.](https://github.com/SrSheep/MakeYourRPC/releases)![](https://cdn.discordapp.com/attachments/426888411488714762/449790173132095499/unknown.png)
+Faça o download da última versão do aplicativo [MakeYourRPC](https://github.com/SrSheep/MakeYourRPC/releases), execute e instale-o e preencha os campos conforme sua aplicação e como quiser, por exemplo, em ID do Cliente você coloca o número que aparece no painel da sua aplicação, já no texto da imagem grande e pequena, status, detalhes, você coloca o que você quer.[Clique aqui para baixá-lo.](https://github.com/SrSheep/MakeYourRPC/releases)
 
-* Depois que você fez todos os passos anteriores, criou, adicionou os recursos, customizou-a todo seu jeito, configurou com os dados do aplicativo e com as informações que você quer, é só clicar em Ligar, caso queira mudar algo, é só editar a informação e clicar em Atualizar.
+![](https://cdn.discordapp.com/attachments/426888411488714762/449790173132095499/unknown.png)
 
-* Vá até a aba Jogos no seu Discord e configure-o [MakeYourRPC](https://github.com/SrSheep/MakeYourRPC/releases) para aparecer no seu status quando você estiver com ele sendo executado. Uau! Veja o resultado final.![](https://cdn.discordapp.com/attachments/426888411488714762/449790487445110784/1.png)
+Depois que você fez todos os passos anteriores, criou, adicionou os recursos, customizou-a todo seu jeito, configurou com os dados do aplicativo e com as informações que você quer, é só clicar em Ligar, caso queira mudar algo, é só editar a informação e clicar em Atualizar.
+
+Vá até a aba Jogos no seu Discord e configure-o [MakeYourRPC](https://github.com/SrSheep/MakeYourRPC/releases) para aparecer no seu status quando você estiver com ele sendo executado. Uau! Veja o resultado final.
+![](https://cdn.discordapp.com/attachments/426888411488714762/449790487445110784/1.png)
 
 # Contributors
 
