@@ -1,10 +1,11 @@
 const {
   app,
   ipcMain,
-  Tray,
-  Menu,
   BrowserWindow,
-  Notification
+  Notification,
+  dialog,
+  Menu,
+  Tray
 } = require('electron');
 const path = require('path');
 const url = require('url');
@@ -13,7 +14,6 @@ const settings = require('electron-settings');
 
 let rpc;
 let clientId;
-let tray;
 let mainWindow;
 
 app.on('ready', () => {
@@ -51,8 +51,6 @@ app.on('ready', () => {
       smallImageTooltip: 'MakeYourRPC'
     });
   }
-
-  clientId = settings.get('clientId');
 });
 
 app.on('window-all-closed', () => {
@@ -71,7 +69,10 @@ ipcMain.on('stoprpc', () => {
   destroyRPC();
 });
 
-ipcMain.on('startrpc', () => {
+ipcMain.on('startrpc', async () => {
+  let clientId = await mainWindow.webContents.executeJavaScript(
+    'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("clientid")[text];'
+  );
   initRPC(clientId);
 });
 
@@ -109,7 +110,6 @@ ipcMain.on('saverpc', async () => {
     largeImageTooltip: largeImageTooltip,
     smallImageTooltip: smallImageTooltip
   });
-  notifyMe();
 });
 
 function initRPC(id) {
@@ -190,7 +190,7 @@ function createWindow() {
 }
 
 function createTray() {
-  tray = new Tray(path.join(__dirname, './src/img/256x256.png'));
+  let tray = new Tray(path.join(__dirname, '/src/img/256x256.png'));
   const trayMenu = Menu.buildFromTemplate([
     {
       label: 'MakeYourRPC',
@@ -207,7 +207,8 @@ function createTray() {
       click: () => {
         app.quit();
       }
-    }
+    },
+    { type: 'separator' }
   ]);
 
   tray.on('double-click', () => {
@@ -216,14 +217,4 @@ function createTray() {
 
   tray.setToolTip('MakeYourRPC');
   tray.setContextMenu(trayMenu);
-}
-
-function notifyMe() {
-  let myNotification = new Notification('Título', {
-    body: 'Lorem Ipsum Dolor Sit Amet'
-  });
-
-  myNotification.onclick = () => {
-    console.log('Notificação clicada');
-  };
 }
