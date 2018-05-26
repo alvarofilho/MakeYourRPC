@@ -4,7 +4,7 @@
 
 # MakeYourRPC
 
-> MakeYourRPC is a program to use the [Discord.js RPC](https://github.com/discordjs/RPC/tree/master) library without any knowledge of programming.
+> MakeYourRPC is a program that facilitates the use of Discord rich presence through a simple and practical program, it is not necessary to have any programming knowledge.
 
 # Usage
 
