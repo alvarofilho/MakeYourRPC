@@ -15,6 +15,7 @@ const settings = require('electron-settings');
 let rpc;
 let clientId;
 let mainWindow;
+let tray;
 
 app.on('ready', () => {
   createTray();
@@ -190,7 +191,7 @@ function createWindow() {
 }
 
 function createTray() {
-  let tray = new Tray(path.join(__dirname, '/src/img/256x256.png'));
+  tray = new Tray(path.join(__dirname, '/src/img/256x256.png'));
   const trayMenu = Menu.buildFromTemplate([
     {
       label: 'MakeYourRPC',
