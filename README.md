@@ -4,7 +4,21 @@
 
 # MakeYourRPC
 
-Create your Rich Presence on Discord in an easy and practical way.
+> MakeYourRPC is a program to use the [Discord.js RPC](https://github.com/discordjs/RPC/tree/master) library without any knowledge of programming.
+
+# Usage
+
+* First you need to register a Rich Presence application with discord
+* Go here [Discordapp](https://discordapp.com/developers/applications/me)
+* Make a new application **The name of the app will be the main name for the rich presence**
+* Enable rich presence for your app and add some assets
+* Download the latest release of MakeYourRPC from here https://github.com/SrSheep/MakeYourRPC/releases
+* Open the program and edit the fields with the information of your newly registered application
+* Run [MakeYourRPC.exe](https://github.com/SrSheep/MakeYourRPC/releases)
+* Go into discord settings and add the [MakeYourRPC.exe](https://github.com/SrSheep/MakeYourRPC/releases) as a game
+* Discord should automatically change the path of [MakeYourRPC.exe](https://github.com/SrSheep/MakeYourRPC/releases) to your Discord Rich Presence
+
+* You can edit the config any time while the program is running to change the presence
 
 # Contributors
 
