@@ -10,6 +10,8 @@
 
 ### English
 
+> First you must create a new application in your Discord account and enable Rich Presence for it, then customize it and finally activate it. How to do this?
+
 * First you need to register a Rich Presence application with discord
 
 - Go here [Discordapp](https://discordapp.com/developers/applications/me)
