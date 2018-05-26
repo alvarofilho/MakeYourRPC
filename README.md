@@ -12,7 +12,7 @@
 * Go here [Discordapp](https://discordapp.com/developers/applications/me)
 * Make a new application **The name of the app will be the main name for the rich presence**
 * Enable rich presence for your app and add some assets
-* Download the latest release of MakeYourRPC from here https://github.com/SrSheep/MakeYourRPC/releases
+* Download the latest release of [MakeYourRPC](https://github.com/SrSheep/MakeYourRPC/releases)
 * Open the program and edit the fields with the information of your newly registered application
 * Run [MakeYourRPC.exe](https://github.com/SrSheep/MakeYourRPC/releases)
 * Go into discord settings and add the [MakeYourRPC.exe](https://github.com/SrSheep/MakeYourRPC/releases) as a game
