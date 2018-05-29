@@ -1,17 +1,17 @@
 function align(c) {
-  var element = document.getElementById(c).parentElement,
-    height = element.offsetHeight;
-  var variable = parseInt(height);
+  let element = document.getElementById(c).parentElement;
+  let height = element.offsetHeight;
+  let variable = height;
   document.getElementById(c).style.lineHeight = variable + 'px';
 }
 
-window.onload = function() {
+window.onload = () => {
   align('togglers');
 };
 
 window.addEventListener(
   'resize',
-  function() {
+  () => {
     align('togglers');
   },
   false

@@ -11,54 +11,20 @@ nav {
   width: 150px;
   height: 100%;
   text-align: center;
-  -webkit-app-region: no-drag;
   font-weight: bold;
 }
 
 .togglers > .minimize,
-.togglers > .maximize,
 .togglers > .close {
   width: 33.32%;
   height: 100%;
-  float: left;
+  float: right;
   margin: 0;
-  cursor: default;
+  cursor: pointer;
   transition: all ease-in-out 0.2s;
-}
-
-.togglers > .maximize > span {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: block;
-  transition: all ease-in-out 0.2s;
-}
-
-.togglers > .maximize > span::before,
-.togglers > .maximize > span::after {
-  content: '';
-  width: 15%;
-  height: 21%;
-  position: absolute;
-  display: block;
-  background-color: transparent;
-  transition: all ease-in-out 0.2s;
-}
-
-.togglers > .maximize > span::before {
-  top: 30%;
-  left: 35%;
-  z-index: 2;
-}
-
-.togglers > .maximize > span::after {
-  top: 25%;
-  left: 45%;
 }
 
 .minimize svg,
-.maximize svg.maximize-svg,
-.maximize svg.fullscreen-svg,
 .close svg {
   width: 10px;
   height: 10px;
@@ -66,20 +32,14 @@ nav {
 }
 
 .close svg polygon {
-  -webkit-transition: fill 0.2s;
-  -moz-transition: fill 0.2s;
-  -ms-transition: fill 0.2s;
-  -o-transition: fill 0.2s;
   transition: fill 0.2s;
 }
 
-.minimize:hover,
-.maximize:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.minimize:hover {
+  background-color: rgba(255, 255, 255, 0.171);
 }
 
-.light .minimize:hover,
-.light .maximize:hover {
+.light .minimize:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 

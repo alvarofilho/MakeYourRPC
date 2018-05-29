@@ -2,18 +2,6 @@ const $ = require('jquery');
 const { remote } = require('electron');
 var win = remote.getCurrentWindow();
 
-$('#minimize').click(() => {
-  win.hide();
-});
+$('#minimize').click(() => win.hide());
 
-$('#close').click(() => {
-  win.close();
-});
-
-$('#maximize').click(() => {
-  if (win.isMaximized()) {
-    win.unmaximize();
-  } else {
-    win.maximize();
-  }
-});
+$('#close').click(() => win.close());

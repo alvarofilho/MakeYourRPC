@@ -24,39 +24,6 @@ h2 {
   margin-top: -10px;
 }
 
-.button {
-  background-color: #7289da;
-  border: none;
-  color: #ffffff;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 6px;
-  margin-left: 3%;
-  margin-right: 2%;
-  margin-top: 15px;
-  text-decoration: none;
-  user-select: none;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.button:active {
-  background-color: #99aab5;
-}
-
-.red {
-  background-color: rgba(189, 12, 47, 0.863);
-}
-
-.button,
-a {
-  text-decoration: none;
-}
-
 h2,
 h4 {
   color: #ffffff;

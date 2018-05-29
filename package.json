@@ -1,11 +1,11 @@
 {
   "name": "MakeYourRPC",
-  "version": "1.3.0",
+  "version": "1.3.5",
   "description": "Create your Rich Presence on Discord in an easy and practical way.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "pack": "electron-builder --dir",
+    "pack": "build --dir",
     "dist": "build"
   },
   "repository": "git@github.com:SrSheep/MakeYourRPC.git",
@@ -24,7 +24,7 @@
     "jsdom": "^11.10.0"
   },
   "devDependencies": {
-    "electron": "^2.0.0",
+    "electron": "2.0.2",
     "electron-builder": "^20.13.3"
   },
   "build": {

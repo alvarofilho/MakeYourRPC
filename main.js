@@ -1,8 +1,7 @@
 const {
   app,
-  ipcMain,
+  ipcMain: ipc,
   BrowserWindow,
-  Notification,
   dialog,
   Menu,
   Tray
@@ -13,25 +12,20 @@ const DiscordRPC = require('./RPC');
 const settings = require('electron-settings');
 
 let rpc;
-let clientId;
 let mainWindow;
 let tray;
 
 app.on('ready', () => {
   createTray();
   createWindow();
-  mainWindow.once('ready-to-show', () => {
-    win.show();
-  });
-  mainWindow.on('closed', () => {
-    mainWindow = null;
-  });
-  mainWindow.on('maximize', () => {
-    mainWindow.webContents.send('maximize');
-  });
-  mainWindow.on('unmaximize', () => {
-    mainWindow.webContents.send('unmaximize');
-  });
+
+  mainWindow.once('ready-to-show', () => mainWindow.show());
+
+  mainWindow.on('closed', () => (mainWindow = null));
+
+  mainWindow.on('maximize', () => mainWindow.webContents.send('maximize'));
+
+  mainWindow.on('unmaximize', () => mainWindow.webContents.send('unmaximize'));
 
   if (!settings.has('clientId')) {
     settings.set('clientId', '445351781774393345');
@@ -66,18 +60,16 @@ app.on('activate', () => {
   }
 });
 
-ipcMain.on('stoprpc', () => {
-  destroyRPC();
-});
+ipc.on('stoprpc', () => destroyRPC());
 
-ipcMain.on('startrpc', async () => {
+ipc.on('startrpc', async () => {
   let clientId = await mainWindow.webContents.executeJavaScript(
     'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("clientid")[text];'
   );
   initRPC(clientId);
 });
 
-ipcMain.on('saverpc', async () => {
+ipc.on('saverpc', async () => {
   settings.clearPath();
   let clientId = await mainWindow.webContents.executeJavaScript(
     'var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("clientid")[text];'
@@ -117,9 +109,7 @@ function initRPC(id) {
   rpc = new DiscordRPC.Client({ transport: 'ipc' });
   rpc.once('ready', () => {
     setActivity();
-    setTimeout(() => {
-      setActivity();
-    }, 1000);
+    setTimeout(() => setActivity(), 1000);
   });
   rpc.login(id).catch(console.error);
 }
@@ -185,9 +175,7 @@ function createWindow() {
 
   // mainWindow.webContents.openDevTools();
 
-  mainWindow.on('closed', () => {
-    mainWindow = null;
-  });
+  mainWindow.on('closed', () => (mainWindow = null));
 }
 
 function createTray() {
@@ -199,22 +187,16 @@ function createTray() {
     },
     {
       label: 'Abrir',
-      click: () => {
-        mainWindow.show();
-      }
+      click: () => mainWindow.show()
     },
     {
       label: 'Fechar',
-      click: () => {
-        app.quit();
-      }
+      click: () => app.quit()
     },
     { type: 'separator' }
   ]);
 
-  tray.on('double-click', () => {
-    mainWindow.show();
-  });
+  tray.on('double-click', () => mainWindow.show());
 
   tray.setToolTip('MakeYourRPC');
   tray.setContextMenu(trayMenu);
