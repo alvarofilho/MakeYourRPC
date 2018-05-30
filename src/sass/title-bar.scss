@@ -1,0 +1,56 @@
+nav {
+  display: block;
+  position: relative;
+  height: 32px;
+  padding: 0;
+}
+
+.togglers {
+  display: block;
+  float: right;
+  width: 150px;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+  > {
+    .minimize,
+    .close {
+      width: 33.32%;
+      height: 100%;
+      float: right;
+      margin: 0;
+      cursor: pointer;
+      transition: all ease-in-out 0.2s;
+    }
+  }
+}
+
+.minimize svg {
+  width: 10px;
+  height: 10px;
+  shape-rendering: crispEdges;
+}
+
+.close svg {
+  width: 10px;
+  height: 10px;
+  shape-rendering: crispEdges;
+  polygon {
+    transition: fill 0.2s;
+  }
+}
+
+.minimize:hover {
+  background-color: rgba(255, 255, 255, 0.171);
+}
+
+.light .minimize:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.close:hover {
+  background-color: rgba(232, 17, 35, 0.9);
+  svg polygon {
+    fill: rgba(255, 255, 255, 1);
+  }
+}

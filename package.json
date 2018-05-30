@@ -1,21 +1,20 @@
 {
   "name": "MakeYourRPC",
   "version": "1.3.5",
-  "description": "Create your Rich Presence on Discord in an easy and practical way.",
+  "description":
+    "Create your Rich Presence on Discord in an easy and practical way.",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "yarn sass && electron .",
     "pack": "build --dir",
-    "dist": "build"
+    "dist": "yarn sass && build",
+    "sass": "node-sass -o src/css/ src/sass/"
   },
   "repository": "git@github.com:SrSheep/MakeYourRPC.git",
   "homepage": "https://github.com/SrSheep/MakeYourRPC#readme",
-  "keywords": [
-    "Electron",
-    "Discord",
-    "RPC"
-  ],
-  "author": "Álvaro Filho <alvaro.fduarte@hotmail.com> (https://github.com/SrSheep/MakeYourRPC)",
+  "keywords": ["Electron", "Discord", "RPC"],
+  "author":
+    "Álvaro Filho <alvaro.fduarte@hotmail.com> (https://github.com/SrSheep/MakeYourRPC)",
   "license": "MIT",
   "dependencies": {
     "discord-rpc": "./RPC",
@@ -25,7 +24,8 @@
   },
   "devDependencies": {
     "electron": "2.0.2",
-    "electron-builder": "^20.13.3"
+    "electron-builder": "^20.13.3",
+    "node-sass": "^4.9.0"
   },
   "build": {
     "appId": "com.makeyourrpc",
@@ -34,10 +34,7 @@
       "icon": "/src/img/512x512.png"
     },
     "linux": {
-      "target": [
-        "AppImage",
-        "snap"
-      ]
+      "target": ["AppImage", "snap"]
     }
   }
 }

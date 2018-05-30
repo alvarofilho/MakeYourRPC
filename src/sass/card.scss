@@ -1,0 +1,11 @@
+[contenteditable='true'] {
+  font-size: 0.75em;
+  color: #ffffff;
+  line-height: 1.5em;
+  position: relative;
+  &:active,
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}

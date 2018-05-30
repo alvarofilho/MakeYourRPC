@@ -14,22 +14,28 @@
   margin-top: 15px;
   text-decoration: none;
   user-select: none;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-  .button:active {
-    background-color: #99aab5; }
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  &:active {
+    background-color: #99aab5;
+  }
+}
 
 .button_red {
-  background-color: rgba(189, 12, 47, 0.863); }
+  background-color: rgba(189, 12, 47, 0.863);
+}
 
 .button_blue {
-  background-color: #7289da; }
+  background-color: #7289da;
+}
 
 .button_green {
-  background-color: #07a70f; }
+  background-color: #07a70f;
+}
 
 .button,
 a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .spinner:before {
   content: '';
@@ -44,8 +50,11 @@ a {
   border-radius: 50%;
   border: 2px solid #ccc;
   border-top-color: #333;
-  animation: spinner 0.6s linear infinite; }
+  animation: spinner 0.6s linear infinite;
+}
 
 @keyframes spinner {
   to {
-    transform: rotate(360deg); } }
+    transform: rotate(360deg);
+  }
+}
