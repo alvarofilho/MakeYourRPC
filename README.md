@@ -1,6 +1,6 @@
 ---
 
-[![Discord](https://discordapp.com/api/guilds/427525850360053780/widget.png?style=shield)](https://discord.gg/heg6VB2) [![Github  Releases](https://img.shields.io/github/downloads/SrSheep/MakeYourRPC/latest/total.svg?style=flat-square)](https://github.com/SrSheep/MakeYourRPC/releases)
+[![Discord](https://discordapp.com/api/guilds/427525850360053780/widget.png?style=shield)](https://discord.gg/heg6VB2) [![Github  Releases](https://img.shields.io/github/downloads/alvarofilho/MakeYourRPC/latest/total.svg?style=flat-square)](https://github.com/alvarofilho/MakeYourRPC/releases)
 
 # MakeYourRPC
 
@@ -60,7 +60,7 @@
 
 # Contributors
 
-* [Álvaro Filho#9328](http://github.com/SrSheep)
+* [Álvaro Filho#9328](http://github.com/alvarofilho)
 
 * [GJMoehra#3411](https://github.com/GMoehra)
 
