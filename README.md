@@ -20,15 +20,15 @@
 
 - Enable rich presence for your app and add some assets
 
-* Download the latest release of [MakeYourRPC](https://github.com/SrSheep/MakeYourRPC/releases)
+* Download the latest release of [MakeYourRPC](https://github.com/alvarofilho/MakeYourRPC/releases)
 
 - Open the program and edit the fields with the information of your newly registered application
 
-* Run [MakeYourRPC.exe](https://github.com/SrSheep/MakeYourRPC/releases)
+* Run [MakeYourRPC.exe](https://github.com/alvarofilho/MakeYourRPC/releases)
 
-- Go into discord settings and add the [MakeYourRPC.exe](https://github.com/SrSheep/MakeYourRPC/releases) as a game
+- Go into discord settings and add the [MakeYourRPC.exe](https://github.com/alvarofilho/MakeYourRPC/releases) as a game
 
-* Discord should automatically change the path of [MakeYourRPC.exe](https://github.com/SrSheep/MakeYourRPC/releases) to your Discord Rich Presence
+* Discord should automatically change the path of [MakeYourRPC.exe](https://github.com/alvarofilho/MakeYourRPC/releases) to your Discord Rich Presence
 
 - You can edit the config any time while the program is running to change the presence
 
@@ -48,7 +48,7 @@
 
 ![](https://cdn.discordapp.com/attachments/426888411488714762/449790151061929994/unknown.png)
 
-* Faça o download da última versão do aplicativo [MakeYourRPC](https://github.com/SrSheep/MakeYourRPC/releases), execute e instale-o e preencha os campos conforme sua aplicação e como quiser, por exemplo, em ID do Cliente você coloca o número que aparece no painel da sua aplicação, já no texto da imagem grande e pequena, status, detalhes, você coloca o que você quer.[Clique aqui para baixá-lo.](https://github.com/SrSheep/MakeYourRPC/releases)
+* Faça o download da última versão do aplicativo [MakeYourRPC](https://github.com/alvarofilho/MakeYourRPC/releases), execute e instale-o e preencha os campos conforme sua aplicação e como quiser, por exemplo, em ID do Cliente você coloca o número que aparece no painel da sua aplicação, já no texto da imagem grande e pequena, status, detalhes, você coloca o que você quer.[Clique aqui para baixá-lo.](https://github.com/alvarofilho/MakeYourRPC/releases)
 
 ![](https://cdn.discordapp.com/attachments/426888411488714762/449790173132095499/unknown.png)
 
