@@ -3,3 +3,4 @@ dist/
 yarn.lock
 npm-debug.log
 .idea
+package-lock.json

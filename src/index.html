@@ -2,73 +2,73 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <title>MakeYourRPC</title>
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="css/base.css" rel="stylesheet">
-  <link href="css/title-bar.css" rel="stylesheet">
-  <link href="css/footer.css" rel="stylesheet">
-  <link href="css/card.css" rel="stylesheet">
-  <link href="css/button.css" rel="stylesheet">
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>MakeYourRPC</title>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/title-bar.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/card.css" rel="stylesheet">
+    <link href="css/button.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 </head>
 
 <body id="body">
-  <nav id="nav" class="nav">
-    <div id="togglers" class="togglers">
-      <div id="close" class="close">
-        <svg x="0px" y="0px" viewBox="0 0 10 10">
+    <nav id="nav" class="nav">
+        <div id="togglers" class="togglers">
+            <div id="close" class="close">
+                <svg x="0px" y="0px" viewBox="0 0 10 10">
           <polygon fill="#FFFFFF" points="10,1 9,0 5,4 1,0 0,1 4,5 0,9 1,10 5,6 9,10 10,9 6,5" />
         </svg>
-      </div>
-      <div id="minimize" class="minimize">
-        <svg x="0px" y="0px" viewBox="0 0 10 1">
+            </div>
+            <div id="minimize" class="minimize">
+                <svg x="0px" y="0px" viewBox="0 0 10 1">
           <rect fill="#FFFFFF" width="10" height="1" />
         </svg>
-      </div>
+            </div>
+        </div>
+    </nav>
+    <img class="title" id="title" src="https://i.imgur.com/KeUzB6Q.png">
+    <div class="center low">
+        <div class="fields">
+            <h2 class="card">Client ID:</h2>
+            <h4 contenteditable="true" id="clientid" onkeypress="return (this.innerText.length <= 20)">placeholder</h4>
+            <h2 class="card">Details:</h2>
+            <h4 contenteditable="true" id="details">placeholder</h4>
+            <h2 class="card">State:</h2>
+            <h4 contenteditable="true" id="state">placeholder</h4>
+            <h2 class="card">Small Image:</h2>
+            <h4 contenteditable="true" id="simage">placeholder</h4>
+            <h2 class="card">Large Image:</h2>
+            <h4 contenteditable="true" id="limage">placeholder</h4>
+            <h2 class="card">Small Text:</h2>
+            <h4 contenteditable="true" id="stext">placeholder</h4>
+            <h2 class="card">Large Text:</h2>
+            <h4 contenteditable="true" id="ltext">placeholder</h4>
+            <h3 class="button button_blue" id="btn-run" onclick="run()">
+                <i class="fas fa-play"></i>
+                <a>Ligar</a>
+            </h3>
+            <h3 class="button button_blue" id="btn-save" onclick="save()">
+                <i class="far fa-edit"></i>
+                <a>Update</a>
+            </h3>
+        </div>
     </div>
-  </nav>
-  <img class="title" id="title" src="https://i.imgur.com/KeUzB6Q.png">
-  <div class="center low">
-    <div class="fields">
-      <h2 class="card">Client ID:</h2>
-      <h4 contenteditable="true" id="clientid" onkeypress="return (this.innerText.length <= 20)">placeholder</h4>
-      <h2 class="card">Details:</h2>
-      <h4 contenteditable="true" id="details">placeholder</h4>
-      <h2 class="card">State:</h2>
-      <h4 contenteditable="true" id="state">placeholder</h4>
-      <h2 class="card">Small Image:</h2>
-      <h4 contenteditable="true" id="simage">placeholder</h4>
-      <h2 class="card">Large Image:</h2>
-      <h4 contenteditable="true" id="limage">placeholder</h4>
-      <h2 class="card">Small Text:</h2>
-      <h4 contenteditable="true" id="stext">placeholder</h4>
-      <h2 class="card">Large Text:</h2>
-      <h4 contenteditable="true" id="ltext">placeholder</h4>
-      <h3 class="button button_blue" id="btn-run" onclick="run()">
-        <i class="fas fa-play"></i>
-        <a>Ligar</a>
-      </h3>
-      <h3 class="button button_blue" id="btn-save" onclick="save()">
-        <i class="far fa-edit"></i>
-        <a>Update</a>
-      </h3>
+    <div class="footer-container">
+        <div class="text-center">
+            © 2018
+            <a href="" class="site">MakeYourRPC</a>. Todos direitos reservados.
+            <br>
+            <div class="developer">
+                <i class="fas fa-terminal"></i>
+                <a>Álvaro Filho</a>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="footer-container">
-    <div class="text-center">
-      © 2018
-      <a href="" class="site">MakeYourRPC</a>. Todos direitos reservados.
-      <br>
-      <div class="developer">
-        <i class="fas fa-terminal"></i>
-        <a>Álvaro Filho</a>
-      </div>
-    </div>
-  </div>
 </body>
 <script src="js/aligner.js"></script>
-<script src="js/menu-handler.js"></script>
+<script src="js/menuHandler.js"></script>
 <script src="js/button.js"></script>
 <script src="renderer.js"></script>
 
