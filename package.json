@@ -5,9 +5,10 @@
     "main": "main.js",
     "scripts": {
         "start": "yarn sass && electron .",
-        "pack": "build --dir",
-        "dist": "yarn sass && build",
-        "sass": "node-sass -o src/css/ src/sass/"
+        "sass": "node-sass -o src/css/ src/sass/",
+        "dist": "electron-builder -wl",
+        "dist:linux": "electron-builder --linux",
+        "dist:win": "electron-builder --windows"
     },
     "repository": "git@github.com:alvarofilho/MakeYourRPC.git",
     "homepage": "https://github.com/alvarofilho/MakeYourRPC#readme",
@@ -27,15 +28,27 @@
     "devDependencies": {
         "electron": ">=6.0.2",
         "electron-builder": "^21.2.0",
-        "electron-packager": "^14.0.4",
-        "electron-windows-installer": "^1.7.8",
         "node-sass": "^4.12.0"
     },
     "build": {
-        "appId": "com.makeyourrpc",
+        "appId": "io.github.alvarofilho.makeyourrpc",
         "win": {
-            "target": "nsis",
+            "target": [{
+                "target": "nsis",
+                "arch": [
+                    "x64",
+                    "ia32"
+                ]
+            }],
             "icon": "/src/img/512x512.png"
+        },
+        "linux": {
+            "target": [
+                "deb",
+                "rpm",
+                "tar.gz"
+            ],
+            "category": "Utility"
         }
     }
 }
