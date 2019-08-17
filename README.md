@@ -1,6 +1,6 @@
 ---
 
-[![Discord](https://discordapp.com/api/guilds/427525850360053780/widget.png?style=shield)](https://discord.gg/heg6VB2) [![Github  Releases](https://img.shields.io/github/downloads/alvarofilho/MakeYourRPC/latest/total.svg?style=flat-square)](https://github.com/alvarofilho/MakeYourRPC/releases)
+[![Github  Releases](https://img.shields.io/github/downloads/alvarofilho/MakeYourRPC/latest/total.svg?style=flat-square)](https://github.com/alvarofilho/MakeYourRPC/releases)
 
 # MakeYourRPC
 
@@ -24,15 +24,15 @@
 
 - Open the program and edit the fields with the information of your newly registered application
 
-* Run [MakeYourRPC.exe](https://github.com/alvarofilho/MakeYourRPC/releases)
+* Run [MakeYourRPC](https://github.com/alvarofilho/MakeYourRPC/releases)
 
-- Go into discord settings and add the [MakeYourRPC.exe](https://github.com/alvarofilho/MakeYourRPC/releases) as a game
+- Go into discord settings and add the [MakeYourRPC](https://github.com/alvarofilho/MakeYourRPC/releases) as a game
 
-* Discord should automatically change the path of [MakeYourRPC.exe](https://github.com/alvarofilho/MakeYourRPC/releases) to your Discord Rich Presence
+* Discord should automatically change the path of [MakeYourRPC](https://github.com/alvarofilho/MakeYourRPC/releases) to your Discord Rich Presence
 
 - You can edit the config any time while the program is running to change the presence
 
-### Portuguese
+### Português
 
 > Primeiramente você deve criar uma nova aplicação em sua conta do Discord e habilitar a Rich Presence para ela, depois customizá-la e por último ativá-la. Como fazer isso?
 
