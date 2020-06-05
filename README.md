@@ -64,6 +64,6 @@
 
 * [GJMoehra#3411](https://github.com/GMoehra)
 
-* [Rubens Camara Machado#5986](https://github.com/RubensCamaraMachado)
+* [Rubens Camara Machado#5986](https://www.instagram.com/rubens051003/)
 
 * [A Liga Dos Programadores](https://github.com/Liga-dos-Programadores)
