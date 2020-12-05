@@ -42,8 +42,6 @@
 
 * Adicione recursos a sua aplicação, tais como as imagens pequena e grande que serão mostradas no visor de sua aplicação enquanto ela estiver em uso.
 
-![](https://cdn.discordapp.com/attachments/426888411488714762/449790151061929994/unknown.png)
-
 * Faça o download da última versão do aplicativo [MakeYourRPC](https://github.com/alvarofilho/MakeYourRPC/releases), execute e instale-o e preencha os campos conforme sua aplicação e como quiser, por exemplo, em ID do Cliente você coloca o número que aparece no painel da sua aplicação, já no texto da imagem grande e pequena, status, detalhes, você coloca o que você quer.[Clique aqui para baixá-lo.](https://github.com/alvarofilho/MakeYourRPC/releases)
 
 * Depois que você fez todos os passos anteriores, criou, adicionou os recursos, customizou-a todo seu jeito, configurou com os dados do aplicativo e com as informações que você quer, é só clicar em Ligar, caso queira mudar algo, é só editar a informação e clicar em Atualizar.
